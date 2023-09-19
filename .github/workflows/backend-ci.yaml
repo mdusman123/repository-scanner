@@ -64,6 +64,12 @@ jobs:
         cd ${{ env.RESC_BACKEND_DIR }}
         tox -e lint
 
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      with:
+          GITHUB_TOKEN: ${{ secrets.__GITHUB_TOKEN__ }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
+
     - name: Get Branch Name
       id: extract_branch
       run: |
