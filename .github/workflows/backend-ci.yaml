@@ -65,10 +65,10 @@ jobs:
         tox -e lint
 
     - name: SonarCloud Scan
-      run: |
-        cd ${{ env.RESC_BACKEND_DIR }}
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
+      uses: SonarSource/sonarcloud-github-action@master
+      with:
+          context: ${{ env.RESC_BACKEND_DIR }}/
+      env:
           GITHUB_TOKEN: ${{ secrets.__GITHUB_TOKEN__ }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
 
