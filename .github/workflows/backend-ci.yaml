@@ -38,19 +38,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      with:
-        projectBaseDir: ${{ env.RESC_BACKEND_DIR }}
-        args: >
-          -Dsonar.organization=abnamro-resc
-          -Dsonar.projectKey=abnamro-resc_resc-backend
-          -Dsonar.python.coverage.reportPaths=coverage.xml
-          -Dsonar.verbose=true
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
     
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
@@ -79,6 +66,19 @@ jobs:
         cd ${{ env.RESC_BACKEND_DIR }}
         tox -e lint
         ls
+
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      with:
+        projectBaseDir: ${{ env.RESC_BACKEND_DIR }}
+        args: >
+          -Dsonar.organization=abnamro-resc
+          -Dsonar.projectKey=abnamro-resc_resc-backend
+          -Dsonar.python.coverage.reportPaths=coverage.xml
+          -Dsonar.verbose=true
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
 
     - name: Get Branch Name
       id: extract_branch
