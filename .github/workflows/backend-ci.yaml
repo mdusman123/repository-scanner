@@ -79,7 +79,6 @@ jobs:
           -Dsonar.tests=tests/
           -Dsonar.branch.name=branch-*
           -Dsonar.branch.target=branch-*
-           tox -e pytest
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
