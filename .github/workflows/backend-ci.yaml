@@ -55,7 +55,7 @@ jobs:
         tox -e pytest
         ls
         pwd
-        cd src/resc_backend
+        cd tests
         ls
 
     - name: Import sorting with isort
