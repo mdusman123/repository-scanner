@@ -72,7 +72,7 @@ jobs:
         args: >
           -Dsonar.organization=abnamro-resc
           -Dsonar.projectKey=abnamro-resc_resc-backend
-          -Dsonar.python.coverage.reportPaths=coverage.xml
+          -Dsonar.python.coverage.reportPaths=
           -Dsonar.test.exclusions=tests/**;test_data/**
           -Dsonar.tests=tests/
           -Dsonar.branch.name=branch-*
