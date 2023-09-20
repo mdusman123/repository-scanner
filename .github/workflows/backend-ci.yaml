@@ -41,10 +41,11 @@ jobs:
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
+      with:
+        path: ${{ env.RESC_BACKEND_DIR }}
       env:
           GITHUB_TOKEN: ${{ secrets.__GITHUB_TOKEN__ }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
-    - run: cd ${{ env.RESC_BACKEND_DIR }}
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
