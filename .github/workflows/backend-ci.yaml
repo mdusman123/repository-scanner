@@ -42,9 +42,17 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       with:
-        path: ${{ env.RESC_BACKEND_DIR }}
+        projectBaseDir: ${{ env.RESC_BACKEND_DIR }}
+        args: >
+          -Dsonar.organization=abnamro-resc
+          -Dsonar.projectKey=abnamro-resc_resc-backend
+          -Dsonar.python.coverage.reportPaths=coverage.xml
+          -Dsonar.sources=lib/
+          -Dsonar.test.exclusions=tests/**
+          -Dsonar.tests=tests/
+          -Dsonar.verbose=true
       env:
-          GITHUB_TOKEN: ${{ secrets.__GITHUB_TOKEN__ }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
 
     - name: Set up Python ${{ matrix.python-version }}
