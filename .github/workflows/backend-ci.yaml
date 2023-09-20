@@ -72,7 +72,7 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       with:
-        projectBaseDir: ${{ env.RESC_BACKEND_DIR }}/src
+        projectBaseDir: ./
         args: >
           -Dsonar.organization=abnamro-resc
           -Dsonar.projectKey=abnamro-resc_resc-backend
