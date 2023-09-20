@@ -55,6 +55,8 @@ jobs:
         tox -e pytest
         ls
         pwd
+        cd src
+        ls
 
     - name: Import sorting with isort
       run: |
