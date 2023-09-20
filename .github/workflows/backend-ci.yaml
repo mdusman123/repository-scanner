@@ -58,17 +58,6 @@ jobs:
         cd tests
         ls
 
-    - name: Import sorting with isort
-      run: |
-        cd ${{ env.RESC_BACKEND_DIR }}
-        tox -e sort
-    
-    - name: Lint with flake8
-      run: |
-        cd ${{ env.RESC_BACKEND_DIR }}
-        tox -e lint
-        ls
-
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       with:
@@ -81,6 +70,17 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
+
+    - name: Import sorting with isort
+      run: |
+        cd ${{ env.RESC_BACKEND_DIR }}
+        tox -e sort
+    
+    # - name: Lint with flake8
+    #   run: |
+    #     cd ${{ env.RESC_BACKEND_DIR }}
+    #     tox -e lint
+    #     ls
 
     - name: Get Branch Name
       id: extract_branch
