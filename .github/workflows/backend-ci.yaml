@@ -74,6 +74,8 @@ jobs:
           -Dsonar.python.coverage.reportPaths=coverage.xml
           -Dsonar.test.exclusions=tests/**;test_data/**
           -Dsonar.tests=tests/
+          -Dsonar.branch.name=branch-*
+          -Dsonar.branch.target=branch-*
           -Dsonar.verbose=true
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
