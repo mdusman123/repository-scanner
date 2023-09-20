@@ -47,7 +47,7 @@ jobs:
           -Dsonar.organization=abnamro-resc
           -Dsonar.projectKey=abnamro-resc_resc-backend
           -Dsonar.python.coverage.reportPaths=coverage.xml
-          -Dsonar.test.exclusions=tests/**
+          -Dsonar.test.exclusions=tests/**;test_data/**
           -Dsonar.tests=tests/
           -Dsonar.verbose=true
       env:
