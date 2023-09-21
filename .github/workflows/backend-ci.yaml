@@ -71,7 +71,7 @@ jobs:
         args: >
           -Dsonar.organization=abnamro-resc
           -Dsonar.projectKey=abnamro-resc_resc-backend
-          -Dsonar.verbose=true
+          -Dsonar.python.coverage.reportPaths=coverage.xml
           -Dsonar.sourceEncoding=UTF-8
           -Dsonar.projectName=resc-backend
           -Dsonar.groupid=resc
