@@ -68,7 +68,6 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@master
       with:
         projectBaseDir: ${{ env.RESC_BACKEND_DIR }}
-        fetch-depth: 0
         args: >
           -Dsonar.organization=abnamro-resc
           -Dsonar.projectKey=abnamro-resc_resc-backend
