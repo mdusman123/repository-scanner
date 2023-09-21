@@ -79,6 +79,7 @@ jobs:
           -Dsonar.sources=src/
           -Dsonar.inclusions=**/*.py
           -Dsonar.exclusions=**/*yml,**/*.xml,**/*.txt,**/*.html,**/*.js
+          -Dsonar.tests=tests/
           -Dsonar.cpd.exclusions=**/*yml,**/*.xml,**/*.txt,**/*.html,**/*.js
           -Dsonar.coverage.exclusions=**/*yml,**/*.xml,**/*.txt,**/*.html,**/*.js
           -Dsonar.pdf.skip=true
