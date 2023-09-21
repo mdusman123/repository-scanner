@@ -58,7 +58,7 @@ jobs:
         ls
         pwd
 
-    - name: test dependencies
+    - name: test foler
       run: |
         cd ${{ env.RESC_BACKEND_DIR }}
         ls
@@ -76,7 +76,7 @@ jobs:
           -Dsonar.sourceEncoding=UTF-8
           -Dsonar.projectName=resc-backend
           -Dsonar.groupid=resc
-          -Dsonar.sources=./src/
+          -Dsonar.sources=src/
           -Dsonar.inclusions=**/*.py
           -Dsonar.exclusions=**/*yml,**/*.xml,**/*.txt,**/*.html,**/*.js
           -Dsonar.cpd.exclusions=**/*yml,**/*.xml,**/*.txt,**/*.html,**/*.js
