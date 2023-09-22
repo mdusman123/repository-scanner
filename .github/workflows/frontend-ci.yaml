@@ -66,7 +66,9 @@ jobs:
         npx auditjs@latest ossi -q || true
         
     - name: Test and coverage
-      run: yarn jest --coverage
+      run: |
+        cd ${{ env.RESC_FRONTEND_DIR }}
+        yarn jest --coverage
     
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
