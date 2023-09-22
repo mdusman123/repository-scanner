@@ -71,6 +71,8 @@ jobs:
         cd ${{ env.RESC_FRONTEND_DIR }}
         yarn jest --coverage || true
         ls
+        cd tests/unit/reports/coverage
+        ls
     
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
@@ -89,7 +91,7 @@ jobs:
           -Dsonar.cpd.exclusions=**/*.example.js,**/*.spec.js,**/*.?spec.js
           -Dsonar.coverage.exclusions=**/*.html,**/*.json,**/*.spec.js,**/*.?spec.js,**/main.*,**/i18n.js,**/router/index.js,**/configuration/*.js
           -Dsonar.javascript.jstest.reportsPath=tests/unit/reports/coverage/
-          -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+          -Dsonar.javascript.lcov.reportPaths=tests/unit/reports/coverage/lcov.info
           -Dsonar.pdf.skip=true
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
