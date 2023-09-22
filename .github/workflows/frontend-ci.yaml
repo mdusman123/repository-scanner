@@ -70,9 +70,6 @@ jobs:
       run: |
         cd ${{ env.RESC_FRONTEND_DIR }}
         yarn jest --coverage || true
-        ls
-        cd tests/unit/reports/coverage
-        ls
     
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
