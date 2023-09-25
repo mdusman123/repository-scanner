@@ -71,6 +71,7 @@ jobs:
         cd ${{ env.RESC_FRONTEND_DIR }}
         yarn jest --coverage || true
         npm install jest-sonar-reporter --save-dev
+        cp coverage/lcov.info ${{ env.RESC_FRONTEND_DIR }}
         ls
         pwd
         
