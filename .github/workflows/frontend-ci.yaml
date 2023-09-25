@@ -2,7 +2,9 @@ name: Frontend CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main        # The default branch
+      - branch-*    # The other branches to be analyzed
     paths:
       - .github/workflows/frontend-ci.yaml
       - components/resc-frontend/**
@@ -70,8 +72,7 @@ jobs:
         cd ${{ env.RESC_FRONTEND_DIR }}
         yarn jest --coverage || true
         npm install jest-sonar-reporter --save-dev
-        cat coverage/lcov.info
-      
+        
       ## This is one of the suggested fixes. 
       ## Im removing the dir paths that were tested for and make them relative paths.
     - name: Fix coverage report
