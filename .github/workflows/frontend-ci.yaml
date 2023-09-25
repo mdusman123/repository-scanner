@@ -73,8 +73,6 @@ jobs:
         yarn jest --coverage || true
         ls
         pwd
-        cd tests/unit/reports/coverage/
-        ls
     
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
