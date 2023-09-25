@@ -69,6 +69,7 @@ jobs:
     - name: Test and coverage
       run: |
         cd ${{ env.RESC_FRONTEND_DIR }}
+        npm install jest-sonar-reporter --save-dev
         yarn jest --coverage || true
         ls
         pwd
