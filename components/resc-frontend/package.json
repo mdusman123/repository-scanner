@@ -53,13 +53,4 @@
     "prettier": "^2.2.1",
     "vue-template-compiler": "^2.6.11"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverage": true,
-    "testResultsProcessor": "jest-sonar-reporter",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/test/"
-    ]
-  }
 }
