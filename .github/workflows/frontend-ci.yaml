@@ -79,7 +79,7 @@ jobs:
       run: |
         cd ${{ env.RESC_FRONTEND_DIR }}
         sed -i "s+/home/runner/work/repository-scanner/repository-scanner/components/resc-frontend/++g" tests/unit/reports/coverage/lcov.info
-        cat coverage/lcov.info
+        cat tests/unit/reports/coverage/lcov.info
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
