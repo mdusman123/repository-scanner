@@ -4,7 +4,6 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['./jest.setup.js'],
   collectCoverage: true,
-  testResultsProcessor: 'jest-sonar-reporter',
   coverageDirectory: 'tests/unit/reports/coverage',
   coverageReporters: ['lcov', 'text', 'cobertura'],
   collectCoverageFrom: [
