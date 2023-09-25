@@ -98,6 +98,7 @@ jobs:
           -Dsonar.javascript.jstest.reportsPath=coverage/lcov.info
           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
           -Dsonar.pdf.skip=true
+          -Dsonar.verbose=true
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.__SONAR_TOKEN_BACKEND__ }}
