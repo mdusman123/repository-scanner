@@ -97,8 +97,8 @@ jobs:
           -Dsonar.tests=tests/
           -Dsonar.cpd.exclusions=**/*.example.js,**/*.spec.js,**/*.?spec.js
           -Dsonar.coverage.exclusions=**/*.html,**/*.json,**/*.spec.js,**/*.?spec.js,**/main.*,**/i18n.js,**/router/index.js,**/configuration/*.js
-          -Dsonar.javascript.jstest.reportsPath=${{ env.RESC_FRONTEND_DIR }}/coverage/lcov.info
-          -Dsonar.javascript.lcov.reportPaths=${{ env.RESC_FRONTEND_DIR }}/coverage/lcov.info
+          -Dsonar.javascript.jstest.reportsPath=repository-scanner/${{ env.RESC_FRONTEND_DIR }}/coverage/lcov.info
+          -Dsonar.javascript.lcov.reportPaths=repository-scanner/${{ env.RESC_FRONTEND_DIR }}/coverage/lcov.info
           -Dsonar.pdf.skip=true
           -Dsonar.verbose=true
       env:
