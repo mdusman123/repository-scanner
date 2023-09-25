@@ -73,7 +73,12 @@ jobs:
         npm install jest-sonar-reporter --save-dev
         ls
         pwd
-    
+        
+      ## This is one of the suggested fixes. 
+      ## Im removing the dir paths that were tested for and make them relative paths.
+    - name: Fix coverage report
+      run: sed -i "s+/home/runner/work/rest-api/rest-api/++g" coverage/lcov.info
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       with:
