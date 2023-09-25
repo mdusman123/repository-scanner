@@ -77,7 +77,7 @@ jobs:
     - name: Fix coverage report
       run: |
         cd ${{ env.RESC_FRONTEND_DIR }}
-        sed -i "s+/home/runner/work/rest-api/rest-api/++g" coverage/lcov.info
+        sed -i "s+/home/runner/work/repository-scanner/repository-scanner/components/resc-frontend/++g" coverage/lcov.info
         cat coverage/lcov.info
 
     - name: SonarCloud Scan
